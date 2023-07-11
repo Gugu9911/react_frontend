@@ -1,0 +1,38 @@
+
+.footer {
+    background-color: #0A192F;
+    padding: 20px;
+    text-align: center;
+    color: #F8F8F8;
+}
+
+.intro {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 18px;
+    color: #8892B0;
+    margin-bottom: 10px;
+}
+
+.contact {
+    margin-top: 10px;
+}
+
+.iconLink {
+    display: inline-block;
+    margin-right: 10px;
+    color: #64FFDA;
+    transition: color 0.3s ease;
+}
+
+.iconLink:hover {
+    color: #EE6C4D;
+}
+
+.icon {
+    font-size: 24px;
+}
