@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 const Header = () => (
   <header className={styles.header}>
-    <div className={styles.logo}>Janine's Portfolio</div>
+    <div className={styles.logo}>Janine's Little Website</div>
     <nav className={styles.navigation}>
-      <Link className={styles.navLink} to='/home'>Home</Link>
+      <Link className={styles.navLink} to='/'>Home</Link>
       <Link className={styles.navLink} to='/introduce'>Introduce</Link>
       <Link className={styles.navLink} to='/login'>Login</Link>
       <div className={styles.searchBox}>
