@@ -1,35 +1,34 @@
-.register-container {
+.login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 75vh;
+    height: 65vh;
   }
   
-  .register-container h1 {
+  .login-container h1 {
     color: #64FFDA;
   }
   
-  .register-container form {
+  .login-container form {
     display: flex;
     flex-direction: column;
     width: 300px;
   }
   
-  .register-container form input,
-  .register-container form select {
+  .login-container form input,
+  .login-container form select {
     margin: 10px 0;
     padding: 10px;
     font-size: 16px;
     border-radius: 15px;
   }
   
-  .register-container form button {
+  .login-container form button {
     margin-top: 20px;
     padding: 10px;
     font-size: 18px;
-    /* color: #8892B0; */
     background-color: #64FFDA;
     border: none;
     cursor: pointer;
@@ -38,7 +37,7 @@
     align-self: center;
   }
   
-  .register-container form button:hover {
+  .login-container form button:hover {
     background-color: #EE6C4D;
     color: #64FFDA;
   }

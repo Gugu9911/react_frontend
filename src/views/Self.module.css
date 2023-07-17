@@ -1,0 +1,30 @@
+.self-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding-top: 100%; /* Adjust this value to move the sentence higher or lower */
+    background-color: #0A192F;
+  }
+  
+  .switchText {
+    font-size: larger;
+    color: #EE6C4D;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .switchLink {
+    font-size: larger;
+    background: none;
+    border: none;
+    color: #64FFDA;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .switchLink:hover {
+    color: #EE6C4D;
+  }
+  

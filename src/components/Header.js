@@ -8,7 +8,7 @@ const Header = () => (
     <nav className={styles.navigation}>
       <Link className={styles.navLink} to='/'>Home</Link>
       <Link className={styles.navLink} to='/introduce'>Introduce</Link>
-      <Link className={styles.navLink} to='/login'>Login</Link>
+      <Link className={styles.navLink} to='/self'>Self</Link>
       <div className={styles.searchBox}>
         <input type="text" placeholder="Search" className={styles.searchInput} />
         <button className={styles.searchButton}>Search</button>

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import Home from './views/Home';
 import Introduce from './views/Introduce';
-import Login from './views/Login';
+import Self from './views/Self';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -12,6 +12,7 @@ import Popup from './components/Popup';
 import { PopupContext } from './context/GlobalContext';
 
 import './App.css';
+
 
 const App = () => {
   const [popup, setPopup] = useState(null);
@@ -26,7 +27,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/introduce" element={<Introduce />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/Self" element={<Self />} />
           </Routes>
         </div>
         <Footer />
