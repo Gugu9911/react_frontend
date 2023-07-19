@@ -1,21 +1,26 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 import Home from './views/Home';
 import Introduce from './views/Introduce';
 import Self from './views/Self';
+import Release from './views/Release';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
-
 import Popup from './components/Popup';
+import PersonInfo from './components/PersonInfo';
+import AddNote from './components/AddNote';
+
 import { PopupContext } from './context/GlobalContext';
 import { UserContext } from './context/GlobalContext';
-import PersonInfo from './components/PersonInfo';
-import { useEffect } from 'react';
+
 
 import './App.css';
+
+
 
 const App = () => {
   const [popup, setPopup] = useState(null);
@@ -41,6 +46,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/introduce" element={<Introduce />} />
             <Route path="/self" element={<Self />} />
+            <Route path="/release" element={<Release />} />
+            <Route path="/addnote" element={<AddNote />} />
             <Route path="/personinfo" element={<PersonInfo />} />
           </Routes>
         </div>

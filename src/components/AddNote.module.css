@@ -1,0 +1,67 @@
+.addnote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 65vh; /* Modify this to your needs */
+  margin-top: 80px;
+  overflow: auto;
+}
+
+.addnote-container h1 {
+  color: #64FFDA;
+}
+
+.addnote-container form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.addnote-container form input,
+.addnote-container form textarea,
+.addnote-container form select {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+.addnote-container form button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #64FFDA;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 150px;
+  align-self: center;
+}
+
+.addnote-container form button:hover {
+  background-color: #EE6C4D;
+  color: #64FFDA;
+}
+
+.carousel .carousel-item {
+  position: relative;
+}
+
+.carousel .carousel-item button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+.carousel .carousel-item button:hover {
+  background-color: #EE6C4D;
+  color: #64FFDA;
+}

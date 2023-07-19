@@ -13,6 +13,7 @@ const Header = () => {
       <nav className={styles.navigation}>
         <Link className={styles.navLink} to='/'>Home</Link>
         <Link className={styles.navLink} to='/introduce'>Introduce</Link>
+        <Link className={styles.navLink} to='/release'>Release</Link>
         {user === null ?
             <Link className={styles.navLink} to="/self">Login</Link>
             :
