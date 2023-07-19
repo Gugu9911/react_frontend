@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Register.module.css';
-import axios from 'axios';
+import userService from '../services/user';
 import { useContext } from 'react';
 import { PopupContext } from '../context/GlobalContext';
 import { useNavigate } from 'react-router-dom' 
@@ -19,7 +19,7 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!form.username || !form.nickname || !form.password || !form.confirmPassword || !form.interest) {
@@ -32,33 +32,31 @@ const Register = () => {
       return;
     }
 
-    // Send a POST request to the backend
-    axios.post('http://localhost:5001/api/users', form)
-      .then(() => {
-        setError(null);
-        setForm({
-          username: '',
-          nickname: '',
-          password: '',
-          confirmPassword: '',
-          interest: ''
-        });
-        navigate('/'); // Redirect to the home page
-        setPopup({
-          type: 'success',
-          text: 'Register successfully'
-        });
-        setTimeout(() => {
-          setPopup(null)
-        }, 3000);
-      })
-      .catch(err => {
-        setError(err.response.data.error);
+    try {
+      await userService.register(form);
+      setError(null);
+      setForm({
+        username: '',
+        nickname: '',
+        password: '',
+        confirmPassword: '',
+        interest: ''
       });
+      navigate('/'); // Redirect to the home page
+      setPopup({
+        type: 'success',
+        text: 'Registered successfully'
+      });
+      setTimeout(() => {
+        setPopup(null)
+      }, 3000);
+    } catch (err) {
+      setError(err.response.data.error);
+    }
   }
 
 
-
+  
   const handleChange = (event) => {
     setForm({
       ...form,

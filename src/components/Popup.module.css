@@ -1,6 +1,6 @@
 .popup {
     position: fixed;  /* Fixes the position relative to the viewport */
-    top: 30%;         /* Positions the top edge of the element to the middle of the viewport */
+    top: 25%;         /* Positions the top edge of the element to the middle of the viewport */
     left: 50%;        /* Positions the left edge of the element to the middle of the viewport */
     transform: translate(-50%, -50%); /* Moves the element back by half of its own width and height to center it perfectly */
     z-index: 1000;    /* Ensures it appears above other elements */

@@ -5,7 +5,7 @@ import Register from '../components/Register';
 import Login from '../components/Login';
 
 const Self = () => {
-  const [isRegister, setIsRegister] = useState(true);
+  const [isRegister, setIsRegister] = useState(false);
 
   return(
     <div>
@@ -16,7 +16,7 @@ const Self = () => {
           {isRegister ? ' Login' : ' Register'}
         </button>
       </p>
-
+      
     </div>
   )
 }

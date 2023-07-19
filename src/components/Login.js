@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import styles from './Login.module.css'; // Create this new CSS module for the login component
-import axios from 'axios';
-import { useContext } from 'react';
+import React, { useState, useContext } from 'react';
+import styles from './Login.module.css'; 
+import loginService from '../services/login'; 
 import { PopupContext } from '../context/GlobalContext';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/GlobalContext';
+
 
 
 const Login = () => {
@@ -13,10 +14,11 @@ const Login = () => {
   });
   const { setPopup } = useContext(PopupContext);
   const [error, setError] = useState(null);
-
+  const { setUser } = useContext(UserContext);
+  
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (!form.username || !form.password) {
@@ -24,26 +26,31 @@ const Login = () => {
       return;
     }
 
-    // Send a POST request to the backend
-    axios.post('http://localhost:5001/api/login', form)
-      .then(() => {
-        setError(null);
-        setForm({
-          username: '',
-          password: ''
-        });
-        navigate('/'); // Redirect to the home page or dashboard
-        setPopup({
-          type: 'success',
-          text: 'Logged in successfully'
-        });
-        setTimeout(() => {
-          setPopup(null)
-        }, 3000);
-      })
-      .catch(err => {
-        setError(err.response.data.error);
+    try {
+      const user = await loginService.login(form);
+      setError(null);
+      setForm({
+        username: '',
+        password: ''
       });
+      window.localStorage.setItem(
+        'loggedAppUser', JSON.stringify(user)
+      );
+      setUser(user);
+
+
+
+      navigate('/personinfo'); 
+      setPopup({
+        type: 'success',
+        text: 'Logged in successfully'
+      });
+      setTimeout(() => {
+        setPopup(null)
+      }, 3000);
+    } catch(err) {
+      setError(err.response.data.error);
+    }
   }
 
   const handleChange = (event) => {
