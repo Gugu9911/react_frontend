@@ -4,8 +4,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 65vh; /* Modify this to your needs */
-  margin-top: 80px;
+  margin-top: 50px;
   overflow: auto;
 }
 
@@ -14,6 +13,7 @@
 }
 
 .addnote-container form {
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -65,3 +65,11 @@
   background-color: #EE6C4D;
   color: #64FFDA;
 }
+
+
+.ReactQuill {
+  margin-top: 20px;
+  height: 100px;
+  margin-bottom: 80px;
+}
+

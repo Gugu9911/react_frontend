@@ -6,7 +6,9 @@ import { useEffect } from 'react';
 import Home from './views/Home';
 import Introduce from './views/Introduce';
 import Self from './views/Self';
+import Notes from './views/Notes';
 import Release from './views/Release';
+
 
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -45,8 +47,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/introduce" element={<Introduce />} />
-            <Route path="/self" element={<Self />} />
+            <Route path="/notes" element={<Notes />} />
             <Route path="/release" element={<Release />} />
+            <Route path="/self" element={<Self />} />
             <Route path="/addnote" element={<AddNote />} />
             <Route path="/personinfo" element={<PersonInfo />} />
           </Routes>
