@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:5001/api/notes'
+const baseUrl = '/api/notes'
 
 let token = null
 
@@ -16,8 +16,11 @@ const create = async newNote => {
   const config = {
     headers: { Authorization: token },
   }
+  console.log(config)
   const request = await axios.post(baseUrl, newNote, config)
   return request.data
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { getAll, create, setToken };
+

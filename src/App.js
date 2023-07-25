@@ -19,6 +19,8 @@ import AddNote from './components/AddNote';
 import { PopupContext } from './context/GlobalContext';
 import { UserContext } from './context/GlobalContext';
 
+import noteService from './services/note';
+
 
 import './App.css';
 
@@ -33,6 +35,8 @@ const App = () => {
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON);
       setUser(user);
+      console.log(user);
+      noteService.setToken(user.token);
     }
   }, []);
 

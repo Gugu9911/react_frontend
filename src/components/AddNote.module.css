@@ -1,75 +1,112 @@
-.addnote-container {
+.addnoteContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 8vh;
   overflow: auto;
 }
 
-.addnote-container h1 {
+.addnoteContainer h2 {
   color: #64FFDA;
 }
 
-.addnote-container form {
-  margin-bottom: 40px;
+.addnoteContainer form {
+  margin-bottom: 4vh;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 50vw;
 }
 
-.addnote-container form input,
-.addnote-container form textarea,
-.addnote-container form select {
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 15px;
+.addnoteContainer form input,
+.addnoteContainer form textarea,
+.addnoteContainer form select {
+  margin: 1vh 0;
+  padding: 1vh;
+  font-size: 2.5vh;
+  border-radius: 1.5vh;
 }
 
-.addnote-container form button {
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 18px;
+.addnoteContainer form button {
+  margin-top: 1.5vh;
+  padding: 1vh;
+  font-size: 2.5vh;
   background-color: #64FFDA;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
-  width: 150px;
+  border-radius: 1.5vh;
+  width: 15vw;
   align-self: center;
 }
 
-.addnote-container form button:hover {
+.addnoteContainer form button:hover {
   background-color: #EE6C4D;
   color: #64FFDA;
 }
 
-.carousel .carousel-item {
+.carouselItem {
   position: relative;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.carousel .carousel-item button {
+.carouselItem button {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 1vh;
+  right: 1vh;
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
   border: none;
   cursor: pointer;
-  border-radius: 15px;
-  padding: 5px 10px;
+  border-radius: 1.5vh;
+  padding: 0.5vh 1vh;
 }
 
-.carousel .carousel-item button:hover {
+.carouselItem button:hover {
   background-color: #EE6C4D;
   color: #64FFDA;
 }
 
+.quillEditor {
+  margin-top: 3vh;
+  height: 30vh;
+  margin-bottom: 10vh;
+}
 
-.ReactQuill {
-  margin-top: 20px;
-  height: 100px;
-  margin-bottom: 80px;
+.carouselImageContainer {
+  width: 50vw;  /* Adjust this to set image width */
+  height: 50vh;  /* Adjust this to set image height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
+}
+
+.carouselImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carouselControlPrev,
+.carouselControlNext {
+  top: 40%;
+  width: 10%; /* This will place the controls closer to the carousel image */
+}
+
+.carouselControlPrevIcon,
+.carouselControlNextIcon {
+  width: 2vw;
+  height: 2vh;
+}
+
+.carouselImageContainer { 
+  position: relative;
+  text-align: center;
+}
+
+.carouselRemoveButton {
+  transform: translateY(+150%);
 }
 
