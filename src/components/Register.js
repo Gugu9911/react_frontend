@@ -42,7 +42,7 @@ const Register = () => {
         confirmPassword: '',
         interest: ''
       });
-      navigate('/'); // Redirect to the home page
+      navigate('/login'); // Redirect to the home page
       setPopup({
         type: 'success',
         text: 'Registered successfully'

@@ -15,6 +15,8 @@ import Header from './components/Header';
 import Popup from './components/Popup';
 import PersonInfo from './components/PersonInfo';
 import AddNote from './components/AddNote';
+import Register from './components/Register';
+import Login from './components/Login';
 
 import { PopupContext } from './context/GlobalContext';
 import { UserContext } from './context/GlobalContext';
@@ -56,6 +58,8 @@ const App = () => {
             <Route path="/self" element={<Self />} />
             <Route path="/addnote" element={<AddNote />} />
             <Route path="/personinfo" element={<PersonInfo />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
         <Footer />

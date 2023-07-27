@@ -6,6 +6,9 @@ import noteService from '../services/note';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';   
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useContext } from 'react';
+import {PopupContext} from '../context/GlobalContext';
+import {UserContext} from '../context/GlobalContext';
 
 const MAX_IMAGES = 5;
 
@@ -14,6 +17,20 @@ const AddNote = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const navigate = useNavigate();
+
+  const { user } = useContext(UserContext)
+  const { setPopup } = useContext(PopupContext)
+
+  if (!user) {
+    setPopup({
+      type: 'info',
+      text: 'You need to login to post a blog'
+    })
+    setTimeout(() => {
+      setPopup(null)
+    }, 2000)
+    navigate('/register')
+  }
 
   useEffect(() => {
     return () => {

@@ -47,7 +47,7 @@ const Login = () => {
       });
       setTimeout(() => {
         setPopup(null)
-      }, 3000);
+      }, 2000);
     } catch(err) {
       setError(err.response.data.error);
     }
