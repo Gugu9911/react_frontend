@@ -1,3 +1,48 @@
+.mainContainer {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+}
+
+.personinfoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 75vh;
+    border-right: 1px solid #64FFDA; /* Adds a line between the sections */
+}
+
+.personinfoContainer h1 {
+    color: #64FFDA;
+}
+
+.personinfoContainer p {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+.personinfoContainer button {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #64FFDA;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 150px;
+    align-self: center;
+}
+
+.personinfoContainer button:hover {
+    background-color: #EE6C4D;
+    color: #64FFDA;
+}
+
 .noteContainer {
     display: flex;
     flex-direction: column;
@@ -6,21 +51,21 @@
     width: 100%;
     margin-top: 6vh;
     overflow: auto;
-  }
-  
-  .noteContainer h2 {
+}
+
+.noteContainer h2 {
     color: #64FFDA;
     margin-bottom: 2rem;
-  }
-  
-  .notesGrid {
+}
+
+.notesGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-  }
-  
-  .noteCard {
+}
+
+.noteCard {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,81 +75,72 @@
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
-  }
-  
-  .noteImage {
+}
+
+.noteImage {
     width: 100%;
-    height: 40vh; /* Adjust this to make the image area bigger */
+    height: 40vh;
     object-fit: cover;
     border-radius: 5px;
-  }
-  
-  .noteTitle {
+}
+
+.noteTitle {
     font-size: 1.2rem;
     margin-top: 1rem;
-  }
-  
-  .noteAuthor {
+}
+
+.noteAuthor {
     font-size: 1rem;
     margin-top: 0.5rem;
-    text-align: left; /* Align to left */
-  }
-  
-  .likeButton {
-    text-align: right; /* Align to right */
+    text-align: left;
+}
+
+.likeButton {
+    text-align: right;
     cursor: pointer;
-  }
-  
-  .pagination {
+}
+
+.pagination {
     margin-bottom: 4vh;
     margin-top: 2rem;
     display: flex;
     gap: 1rem;
-  }
-  
-  .pagination button {
+}
+
+.pagination button {
     background-color: #64FFDA;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 10px;
     cursor: pointer;
-  }
-  
-  .paginationActive {
+}
+
+.paginationActive {
     background-color: #EE6C4D;
     color: #EE6C4D;
-  }
-  
-  .noteFooter {
+}
+
+.noteFooter {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-  }
-  
-  .noteAuthor {
+}
+
+.noteAuthor {
     margin: 0;
     color: #64FFDA;
-  }
-  
-  .likeButton {
+}
+
+.likeButton {
     display: flex;
     align-items: center;
     cursor: pointer;
-  }
-  
-  .likeCount {
+}
+
+.likeCount {
     margin-left: 5px;
-  }
-/*   
-  .noteContent {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    height: -10px; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-   */
+}
 
 .linkStyle {
     color: #64FFDA;

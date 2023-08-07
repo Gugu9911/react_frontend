@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import Home from './views/Home';
 import Introduce from './views/Introduce';
 import Self from './views/Self';
+import PersonInfo from './views/PersonInfo';
 import Notes from './views/Notes';
 import Release from './views/Release';
 
@@ -13,10 +14,11 @@ import Release from './views/Release';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Popup from './components/Popup';
-import PersonInfo from './components/PersonInfo';
 import AddNote from './components/AddNote';
 import Register from './components/Register';
 import Login from './components/Login';
+import ShowNote from './components/ShowNote';
+import EditNote from './components/EditNote';
 
 import { PopupContext } from './context/GlobalContext';
 import { UserContext } from './context/GlobalContext';
@@ -60,6 +62,8 @@ const App = () => {
             <Route path="/personinfo" element={<PersonInfo />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/notes/:id" element={<ShowNote />} />
+            <Route path="/editnote/:id" element={<EditNote />} />
           </Routes>
         </div>
         <Footer />

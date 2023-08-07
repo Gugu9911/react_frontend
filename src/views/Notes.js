@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
 import styles from './Notes.module.css';
 import { Link } from 'react-router-dom';
 import noteService from '../services/note';
 import {UserContext} from '../context/GlobalContext';
+
 
 const NotesPerPage = 6;
 
@@ -31,6 +32,7 @@ const Note = () => {
     fetchNotes();
   }, []);
 
+  
   const handleLike = (id) => {
     setLiked(prevState => ({...prevState, [id]: !prevState[id]}));
   
@@ -51,13 +53,15 @@ const Note = () => {
             <h3 className={styles.noteTitle}>{note.title}</h3>
             {/* <p className={styles.noteContent}>{note.content.substring(0, 100)}..</p>   */}
             <div className={styles.noteFooter}>
-                <p className={styles.noteAuthor}>{note.author}</p>
+            <p className={styles.noteAuthor}>
+                <FontAwesomeIcon icon={faUser} />   {note.author}
+            </p>
                 <div className={styles.likeButton} onClick={() => handleLike(note.id)}>
                     <FontAwesomeIcon icon={faHeart} color={liked[note.id] ? "#EE6C4D" : "white"} />
                     <span className={styles.likeCount}>{likes[note.id] || 0}</span>
                 </div>
             </div>
-            {user && <Link to={`/note/${note.id}`}>View More</Link>}
+            {user && <Link to={`/notes/${note.id}`} className={styles.linkStyle}>View More</Link>}
           </div>
         ))}
       </div>
