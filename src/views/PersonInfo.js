@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import noteService from '../services/note';
 import { UserContext } from '../context/GlobalContext';
 
-const NotesPerPage = 6;
+const NotesPerPage = 4;
 
 const PersonInfo = () => {
   const { user, setUser } = useContext(UserContext);

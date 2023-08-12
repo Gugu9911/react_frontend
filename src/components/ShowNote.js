@@ -5,6 +5,7 @@ import styles from './ShowNote.module.css';
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/GlobalContext';
+import { PopupContext } from '../context/GlobalContext';
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
@@ -12,6 +13,7 @@ const ShowNote = () => {
     const [note, setNote] = useState(null);
     const { id } = useParams();
     const { user } = useContext(UserContext)
+    const { setPopup } = useContext(PopupContext);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -34,6 +36,25 @@ const ShowNote = () => {
     const handleEdit = () => {
         navigate(`/editnote/${note.id}`)
       }
+    
+    const handleDelete = async () => {
+        if (window.confirm(`Are you sure you want to delete ${note.title}?`)) {
+            try {
+                await noteService.setToken(user.token);
+                await noteService.deleteNote(note);
+                navigate('/notes');
+                setPopup({
+                    type: 'success',
+                    text: 'Note deleted successfully'
+                });
+                setTimeout(() => {
+                    setPopup(null)
+                }, 2000);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    };
 
 
 
@@ -53,7 +74,7 @@ const ShowNote = () => {
 
             {user && user.nickname === note.author &&
                 <div className={styles.buttonContainer}>
-                    {/* <button onClick={handleDelete} className={styles.deleteButton}>Delete</button> */}
+                    <button onClick={handleDelete} className={styles.deleteButton}>Delete</button>
                     <button onClick={handleEdit} className={styles.editButton}>Edit</button>
                 </div>
             }

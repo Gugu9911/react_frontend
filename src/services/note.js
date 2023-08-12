@@ -34,6 +34,22 @@ const update = async (id, newObject) => {
   const response = await axios.put(`${baseUrl}/${id}`, newObject, config)
   return response.data
 }
+
+const deleteNote = async note => {
+  try {
+    const config = {
+      headers: { Authorization: token },
+    };
+    
+    const response = await axios.delete(`${baseUrl}/${note.id}`, config);
+    return response.data;
+  } catch (error) {
+    console.error("Error deleting note:", error);
+    throw error;  // You can re-throw the error to handle it at a higher level or return a specific error message or object.
+  }
+}
+
+
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, create, setToken, getOne , update};
+export default { getAll, create, setToken, getOne , update, deleteNote};
 

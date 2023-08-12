@@ -60,4 +60,43 @@
     max-width: 50%; 
     object-fit: contain;
   }
+
+
+  .buttonContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+  }
   
+  .editButton{
+    background-color: #64FFDA;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .editButton:hover {
+    background-color: #EE6C4D;
+    color: #64FFDA;
+  }
+
+.deleteButton{
+  background-color: #64FFDA;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.deleteButton:hover {
+  background-color: #EE6C4D;
+  color: #64FFDA;
+} 
