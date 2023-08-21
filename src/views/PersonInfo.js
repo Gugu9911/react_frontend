@@ -2,10 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import styles from './PersonInfo.module.css';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import noteService from '../services/note';
 import { UserContext } from '../context/GlobalContext';
+import Like from '../components/Like';
 
 const NotesPerPage = 4;
 
@@ -13,10 +14,11 @@ const PersonInfo = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
-  const [liked, setLiked] = useState({});
+  const [liked] = useState({});
   const [page, setPage] = useState(1);
-  const [likes, setLikes] = useState({});
   const [totalPages, setTotalPages] = useState(1);
+  const [likesCount] = useState({});
+
 
   const logout = () => {
     window.localStorage.removeItem('loggedAppUser');
@@ -41,10 +43,7 @@ const PersonInfo = () => {
     }
   }, [user]);
 
-  const handleLike = (id) => {
-    setLiked(prevState => ({...prevState, [id]: !prevState[id]}));
-    setLikes(prevState => ({...prevState, [id]: prevState[id] ? prevState[id] - 1 : (prevState[id] || 0) + 1}));
-  };
+
 
   if (!user) {
     return null;  // Or return a loading screen here until user is loaded.
@@ -71,10 +70,11 @@ const PersonInfo = () => {
                 <p className={styles.noteAuthor}>
                   <FontAwesomeIcon icon={faUser} /> {note.author}
                 </p>
-                <div className={styles.likeButton} onClick={() => handleLike(note.id)}>
-                  <FontAwesomeIcon icon={faHeart} color={liked[note.id] ? "#EE6C4D" : "white"} />
-                  <span className={styles.likeCount}>{likes[note.id] || 0}</span>
-                </div>
+                <Like
+                noteId={note.id}
+                initialCount={likesCount[note.id] || 0}
+                isLiked={liked[note.id]}
+              />
               </div>
               <Link to={`/note/${note.id}`} className={styles.linkStyle}>View More</Link>
             </div>

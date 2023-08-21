@@ -19,6 +19,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import ShowNote from './components/ShowNote';
 import EditNote from './components/EditNote';
+import Like from './components/Like';
 
 import { PopupContext } from './context/GlobalContext';
 import { UserContext } from './context/GlobalContext';
@@ -65,6 +66,7 @@ const App = () => {
             <Route path="/notes/:id" element={<ShowNote />} />
             <Route path="/editnote/:id" element={<EditNote />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/like" element={<Like />} />
           </Routes>
         </div>
         <Footer />

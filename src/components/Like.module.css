@@ -1,0 +1,14 @@
+.likeButton {
+    text-align: right; /* Align to right */
+    cursor: pointer;
+}
+
+.likeButton {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .likeCount {
+    margin-left: 5px;
+  }
