@@ -1,7 +1,8 @@
 .carouselImage {
     position: relative;
     text-align: center;
-    height: 600px;
+    height: 50vw;  /* Use viewport width to make it responsive. Adjust this value based on the desired aspect ratio */
+    max-height: 600px;  /* Limit the maximum height */
 }
 
 .carouselImage img {
@@ -12,14 +13,23 @@
 
 .legend {
     position: absolute;
-    bottom: 20px;
+    bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 26px;
+    font-size: 1.6rem;  /* Use rem for font sizes */
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
     background-color: rgba(0,0,0,0.6);
-    padding: 10px;
-    border-radius: 5px;
+    padding: 1rem;  /* Use rem for padding */
+    border-radius: 0.5rem;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .legend {
+        font-size: 1.2rem;  /* Adjust font size for smaller screens */
+        padding: 0.75rem;  /* Adjust padding for smaller screens */
+        bottom: 1rem;
+    }
 }

@@ -1,115 +1,128 @@
 .noteContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 6vh;
-    overflow: auto;
-  }
-  
-  .noteContainer h2 {
-    color: #64FFDA;
-    margin-bottom: 2rem;
-  }
-  
-  .notesGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  
-  .noteCard {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 55vh;
-    border: 1px solid #64FFDA;
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .noteImage {
-    width: 100%;
-    height: 40vh; /* Adjust this to make the image area bigger */
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  
-  .noteTitle {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-  }
-  
-  .noteAuthor {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    text-align: left; /* Align to left */
-  }
-  
-  .likeButton {
-    text-align: right; /* Align to right */
-    cursor: pointer;
-  }
-  
-  .pagination {
-    margin-bottom: 4vh;
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .pagination button {
-    background-color: #64FFDA;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .paginationActive {
-    background-color: #EE6C4D;
-    color: #EE6C4D;
-  }
-  
-  .noteFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .noteAuthor {
-    margin: 0;
-    color: #64FFDA;
-  }
-  
-  .likeButton {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .likeCount {
-    margin-left: 5px;
-  }
-/*   
-  .noteContent {
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    height: -10px; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-   */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5vh;
+  overflow: auto;
+}
+
+.noteContainer h2 {
+  color: #64FFDA;
+  margin-bottom: 2rem;
+}
+
+.notesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.noteCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25rem;
+  height: 25rem;
+  border: 1px solid #64FFDA;
+  border-radius: 1rem;
+  padding: 0rem 1rem;
+  text-align: center;
+}
+
+.noteImage {
+  width: 100%;
+  height: 35vh;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.noteTitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.noteAuthor {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.likeButton {
+  text-align: right;
+  cursor: pointer;
+}
+
+.pagination {
+  margin-bottom: 4vh;
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.pagination button {
+  background-color: #64FFDA;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.paginationActive {
+  background-color: #EE6C4D;
+  color: #EE6C4D;
+}
+
+.noteFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.noteAuthor {
+  margin: 0;
+  color: #64FFDA;
+}
+
+.likeButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.likeCount {
+  margin-left: 5px;
+}
+
 
 .linkStyle {
-    color: #64FFDA;
+  color: #64FFDA;
 }
 
 .linkStyle:visited {
-    color: #EE6C4D;
+  color: #EE6C4D;
+}
+
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .noteCard {
+    width: 90%;
+    height: 20rem;
+  }
+
+  .noteImage {
+    height: 12.5rem;
+    /* Adjust image height for smaller screens */
+  }
+
+  .noteTitle,
+  .noteAuthor {
+    font-size: 1rem;
+    /* Adjust font size for readability on smaller screens */
+  }
 }

@@ -1,4 +1,4 @@
-.header {
+/* .header {
     background-color: #0A192F;
     display: flex;
     justify-content: space-between;
@@ -54,4 +54,124 @@
 
 .searchButton:hover {
     background-color: #EE6C4D;
+} */
+
+
+
+.header {
+    background-color: #0A192F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    /* 20px/16px */
+    color: #F8F8F8;
+}
+
+.logo {
+    font-size: 1.5rem;
+    /* 24px/16px */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+}
+
+.navLink {
+    margin-left: 1.25rem;
+    /* 20px/16px */
+    font-size: 1.25rem;
+    /* 20px/16px */
+    color: #64FFDA;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #EE6C4D;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    margin-left: 1.25rem;
+    /* 20px/16px */
+}
+
+.searchInput {
+    padding: 0.3125rem;
+    /* 5px/16px */
+    border-radius: 0.25rem;
+    /* 4px/16px */
+    border: 1px solid #8892B0;
+}
+
+.searchButton {
+    padding: 0.3125rem 0.625rem;
+    /* 5px/16px and 10px/16px */
+    background-color: #64FFDA;
+    border: none;
+    border-radius: 0.25rem;
+    /* 4px/16px */
+    margin-left: 0.625rem;
+    /* 10px/16px */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #EE6C4D;
+}
+
+/* Media Query for smaller screens, e.g., mobile devices */
+@media (max-width: 480px) {
+    /* .header {
+        flex-direction: column;
+        padding: 5%;
+    }
+    .navigation {
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .navLink {
+        margin-left: 0.5rem;
+        font-size: 1rem;
+    } */
+    .header {
+        flex-direction: column;
+      }
+
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .navLinks {
+        width: 100%;
+        margin-bottom: 1rem; /* Space between navLinks and searchBox */
+        flex-direction: row;
+        justify-content: center; /* This will center the items in the row */
+    }
+
+    .navLink {
+        margin-left: 0.5rem;
+        font-size: 1rem; /* Adjusting font size for smaller screens */
+    }
+
+    .searchBox {
+        width: 100%;
+        justify-content: center; /* This will center the items in the row */
+    }
 }

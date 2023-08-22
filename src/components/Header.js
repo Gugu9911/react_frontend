@@ -14,7 +14,7 @@ const Header = () => {
 
   const handleSearch = (event) => {
     event.preventDefault(); // Always prevent default to handle navigation yourself
-  
+
     if (!searchTerm || !searchTerm.trim()) {
       navigate('/notes');
       setPopup({
@@ -24,24 +24,26 @@ const Header = () => {
       setTimeout(() => setPopup(null), 2000);
       return;  // Exit early if no valid searchTerm
     }
-  
+
     navigate(`/search?query=${searchTerm}`);
   }
-  
+
 
   return (
     <header className={styles.header}>
       <div className={styles.logo}>Janine's Little Website</div>
       <nav className={styles.navigation}>
-        <Link className={styles.navLink} to='/'>Home</Link>
-        <Link className={styles.navLink} to='/introduce'>Introduce</Link>
-        <Link className={styles.navLink} to='/notes'>Notes</Link>
-        <Link className={styles.navLink} to='/release'>Release</Link>
-        {user === null ?
-          <Link className={styles.navLink} to="/self">Login</Link>
-          :
-          <Link className={styles.navLink} to="/personinfo">{user.nickname}</Link>
-        }
+        <div className={styles.navLinks}>
+          <Link className={styles.navLink} to='/'>Home</Link>
+          <Link className={styles.navLink} to='/introduce'>Introduce</Link>
+          <Link className={styles.navLink} to='/notes'>Notes</Link>
+          <Link className={styles.navLink} to='/release'>Release</Link>
+          {user === null ?
+            <Link className={styles.navLink} to="/self">Login</Link>
+            :
+            <Link className={styles.navLink} to="/personinfo">{user.nickname}</Link>
+          }
+        </div>
         <form className={styles.searchBox} onSubmit={handleSearch}>
           <input
             type="text"

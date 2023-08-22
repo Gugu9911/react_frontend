@@ -1,10 +1,10 @@
-.self-container {
+/* .self-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
-    padding-top: 100%; /* Adjust this value to move the sentence higher or lower */
+    padding-top: 100%; 
     background-color: #0A192F;
   }
   
@@ -27,4 +27,51 @@
   .switchLink:hover {
     color: #EE6C4D;
   }
-  
+   */
+
+.self-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  padding-top: 10rem;
+  /* Adjust this value using relative units */
+  background-color: #0A192F;
+}
+
+.switchText {
+  font-size: 1.2rem;
+  /* Use rem for relative size */
+  color: #EE6C4D;
+  margin-top: 1.25rem;
+  /* converted px to rem */
+  text-align: center;
+}
+
+.switchLink {
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: #64FFDA;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.switchLink:hover {
+  color: #EE6C4D;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .self-container {
+    padding-top: 5rem;
+    /* Adjust for smaller screens */
+  }
+
+  .switchText,
+  .switchLink {
+    font-size: 1rem;
+    /* Adjust font size for smaller screens */
+  }
+}

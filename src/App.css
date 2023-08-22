@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -14,4 +14,30 @@ body {
 
 .content-container {
     flex: 1;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* base font-size for responsiveness */
+    background-color: #172a45;
+    color: #F8F8F8;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh; */
+}
+
+.content-container {
+    flex: 1;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
 }

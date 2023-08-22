@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   justify-content: space-between;
   padding: 20px;
@@ -23,13 +23,13 @@
 
 .title {
   font-size: 1.8em;
-  color: #64FFDA; /* Bright Turquoise */
+  color: #64FFDA; 
   margin-bottom: 15px;
 }
 
 .paragraph {
   line-height: 1.6;
-  color: #F8F8F8; /* Lighter Turquoise */
+  color: #F8F8F8; 
   margin-bottom: 20px;
 }
 
@@ -75,4 +75,99 @@
 
 .link:hover {
   color: #1c8269;
+} */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;  /* Use rem for padding */
+  font-size: 1.1em;
+  color: #DDDDDD;
+  border-radius: 1rem;  /* Use rem for border-radius */
+}
+
+.columnleft, .columnright {
+  margin: 2%;
+  padding: 1rem;  /* Use rem for padding */
+}
+
+.columnleft {
+  flex: 6;
+  max-width: 50%;
+}
+
+.columnright {
+  flex: 4;
+  max-width: 50%;
+}
+
+.title {
+  font-size: 1.8em;
+  color: #64FFDA;
+  margin-bottom: 1rem;  /* Use rem for margin */
+}
+
+.paragraph {
+  line-height: 1.6;
+  color: #F8F8F8;
+  margin-bottom: 1.25rem;  /* Use rem for margin */
+}
+
+.button {
+  background-color: #64FFDA;
+  color: #000000;
+  border: none;
+  padding: 0.6rem 1.2rem;  /* Use rem for padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;  /* Use rem for font size */
+  margin: 0.6rem 0.125rem;  /* Use rem for margin */
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 1rem;  /* Use rem for border-radius */
+}
+
+.button:hover {
+  background-color: #EE6C4D;
+  color: #64FFDA;
+}
+
+.imageContainer {
+  margin-top: 1.25rem;  /* Use rem for margin */
+}
+
+.imageContainer img {
+  width: 80%;
+  height: auto;
+  border-radius: 1rem;  /* Use rem for border-radius */
+}
+
+.center {
+  font-size: 0.9em;
+  color: #88FFFF;
+}
+
+.link {
+  color: #38e3b8;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #1c8269;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .columnleft, .columnright {
+    max-width: 100%;
+  }
+
+  .button {
+    font-size: 0.9rem;  /* Adjust font size for smaller screens */
+  }
 }

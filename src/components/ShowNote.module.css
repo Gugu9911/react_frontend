@@ -1,4 +1,4 @@
-.noteContainer {
+/* .noteContainer {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -99,4 +99,116 @@
 .deleteButton:hover {
   background-color: #EE6C4D;
   color: #64FFDA;
-} 
+}  */
+
+.noteContainer {
+  max-width: 50rem; /* 800px */
+  margin: 0 auto;
+  padding: 1.25rem; /* 20px */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.625rem; /* 10px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notePictures {
+  height: 6.25rem; /* 100px */
+}
+
+.noteTitle {
+  font-weight: bold;
+  margin: 0.625rem 0 1.5625rem; /* 10px 0 25px */
+  color: #64FFDA;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.noteContent {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+  color: #c9fff3;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.noteAuthor {
+  font-size: 1.125rem; /* 18px */
+  color: #ffffff;
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.linkStyle {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.noteFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carouselItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carouselItem img {
+  width: auto;
+  height: auto;
+  max-height: 75%;
+  max-width: 50%;
+  object-fit: contain;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+.editButton,
+.deleteButton {
+  background-color: #64FFDA;
+  border: none;
+  border-radius: 0.625rem; /* 10px */
+  padding: 0.3125rem 0.625rem; /* 5px 10px */
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  background-color: #EE6C4D;
+  color: #64FFDA;
+}
+
+@media only screen and (max-width: 600px) {
+  .noteContainer {
+      padding: 1rem;
+  }
+
+  .notePictures {
+      height: 50vw;
+  }
+
+  .noteTitle {
+      font-size: 1.5rem;
+      margin: 0.5rem 0 1rem; /* Adjusting margins for smaller screens */
+  }
+
+  .buttonContainer {
+      /* flex-direction: column; */
+      width: 80%;
+      align-items: center;
+  }
+
+  .editButton, .deleteButton {
+      margin-bottom: 0.5rem;
+      width: 40%;
+  }
+}

@@ -1,5 +1,5 @@
-.likeButton {
-    text-align: right; /* Align to right */
+/* .likeButton {
+    text-align: right; 
     cursor: pointer;
 }
 
@@ -11,4 +11,23 @@
   
   .likeCount {
     margin-left: 5px;
-  }
+  } */
+
+  .likeButton {
+    /* Remove the text-align: right; property, as the flex model will handle it */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.likeCount {
+    margin-left: 0.3125rem; /* 5px/16px */
+}
+
+/* Example media query if you need to adjust the like button for smaller screens */
+@media only screen and (max-width: 420px) {
+
+    .likeCount {
+        margin-left: 0.25rem; /* Adjust margin or other properties if required */
+    }
+}

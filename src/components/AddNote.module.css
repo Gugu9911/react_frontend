@@ -75,12 +75,12 @@
 }
 
 .carouselImageContainer {
-  width: 50vw;  /* Adjust this to set image width */
-  height: 50vh;  /* Adjust this to set image height */
+  width: 50vw;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin:auto;
+  margin: auto;
 }
 
 .carouselImage {
@@ -92,7 +92,7 @@
 .carouselControlPrev,
 .carouselControlNext {
   top: 40%;
-  width: 10%; /* This will place the controls closer to the carousel image */
+  width: 10%;
 }
 
 .carouselControlPrevIcon,
@@ -101,7 +101,7 @@
   height: 2vh;
 }
 
-.carouselImageContainer { 
+.carouselImageContainer {
   position: relative;
   text-align: center;
 }
@@ -110,3 +110,36 @@
   transform: translateY(+150%);
 }
 
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .addnoteContainer form {
+    width: 95%;
+  }
+
+  .carouselImageContainer {
+    width: 95%;
+    height: 40vh;
+  }
+
+  .carouselItem button {
+    bottom: 9vh;
+    width: 5rem;
+    height: 5rem;
+    font-size: 0.8rem !important;
+    /* Adjust to a more standard size */
+    padding: 1rem;
+    /* Center the text */
+    line-height: 1;
+    /* Ensures text is vertically centered */
+    text-align: center;
+    /* display: inline-block;
+    overflow: hidden;
+    white-space: nowrap; */
+  }
+
+  .addnoteContainer form button {
+    font-size: 1.5vh !important;
+
+  }
+}
