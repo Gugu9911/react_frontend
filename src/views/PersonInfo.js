@@ -76,7 +76,7 @@ const PersonInfo = () => {
                 isLiked={liked[note.id]}
               />
               </div>
-              <Link to={`/note/${note.id}`} className={styles.linkStyle}>View More</Link>
+              <Link to={`/notes/${note.id}`} className={styles.linkStyle}>View More</Link>
             </div>
           ))}
         </div>

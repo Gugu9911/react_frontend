@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>Janine's Little Website</div>
+      <div className={styles.logo}>Jingyi's Little Website</div>
       <nav className={styles.navigation}>
         <div className={styles.navLinks}>
           <Link className={styles.navLink} to='/'>Home</Link>
