@@ -17,7 +17,7 @@ const EditNote = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    
+
     useEffect(() => {
         const fetchNote = async () => {
             try {
@@ -115,17 +115,34 @@ const EditNote = () => {
     //     setImages(images.filter((img, i) => i !== index));
     // }
 
-    const handleRemoveImage = (index) => {
+    // const handleRemoveImage = (index) => {
+    //     setImages(prevImages => {
+    //         const newImages = [...prevImages];
+    //         if (!newImages[index].blob) { // If it's an existing image
+    //             newImages[index].delete = true; // Mark for deletion
+    //         } else {
+    //             newImages.splice(index, 1); // Remove new blobs directly since they aren't on server yet
+    //         }
+    //         return newImages;
+    //     });
+    // };
+    const handleRemoveImage = (url) => {
         setImages(prevImages => {
             const newImages = [...prevImages];
-            if (!newImages[index].blob) { // If it's an existing image
-                newImages[index].delete = true; // Mark for deletion
+            const imageIndex = newImages.findIndex(img => img.url === url);
+            if (imageIndex === -1) return prevImages; // Return the previous state if image not found
+
+            if (!newImages[imageIndex].blob) {
+                newImages[imageIndex].delete = true;
             } else {
-                newImages.splice(index, 1); // Remove new blobs directly since they aren't on server yet
+                newImages.splice(imageIndex, 1);
             }
+
             return newImages;
         });
     };
+
+
 
 
     return (
@@ -143,13 +160,21 @@ const EditNote = () => {
                                         src={image.url}
                                         alt={`Slide ${index}`}
                                     />
-                                    <button
+                                    {/* <button
                                         className={styles.carouselRemoveButton}
                                         type="button"
                                         onClick={() => handleRemoveImage(index)}
                                     >
                                         Remove this picture
+                                    </button> */}
+                                    <button
+                                        className={styles.carouselRemoveButton}
+                                        type="button"
+                                        onClick={() => handleRemoveImage(image.url)}
+                                    >
+                                        Remove this picture
                                     </button>
+
                                 </div>
                             </Carousel.Item>
                         ))}

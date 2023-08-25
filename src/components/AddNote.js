@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import styles from './AddNote.module.css'; 
+import styles from './AddNote.module.css';
 import { useNavigate } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
-import noteService from '../services/note'; 
+import noteService from '../services/note';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';   
+import 'react-quill/dist/quill.snow.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useContext } from 'react';
-import {PopupContext} from '../context/GlobalContext';
-import {UserContext} from '../context/GlobalContext';
+import { PopupContext } from '../context/GlobalContext';
+import { UserContext } from '../context/GlobalContext';
 
 const MAX_IMAGES = 5;
 
@@ -20,6 +20,8 @@ const AddNote = () => {
 
   const { user } = useContext(UserContext)
   const { setPopup } = useContext(PopupContext)
+
+
 
   if (!user) {
     setPopup({
@@ -55,7 +57,7 @@ const AddNote = () => {
           width *= MAX_DIM / height;
           height = MAX_DIM;
         }
-  
+
         canvas.width = width;
         canvas.height = height;
         ctx.drawImage(img, 0, 0, width, height);
@@ -63,10 +65,10 @@ const AddNote = () => {
       };
     });
   }
-  
-  
 
-const handleImagesChange = (e) => {
+
+
+  const handleImagesChange = (e) => {
     if (e.target.files) {
       const files = Array.from(e.target.files);
       if ((files.length + images.length) > MAX_IMAGES) {
@@ -81,71 +83,74 @@ const handleImagesChange = (e) => {
     }
   }
 
-const handleAddNote = async (event) => {
+  const handleAddNote = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     for (let i = 0; i < images.length; i++) {
       formData.append('images', new File([images[i].blob], images[i].name, { type: 'image/jpeg' }));
     }
     formData.append('title', title);
-    formData.append('content', content);  
+    formData.append('content', content);
+
+
     try {
-      await noteService.create(formData); 
+      await noteService.create(formData);
       setTitle("");
       setContent("");
       setImages([]);
       navigate('/notes');
-      alert('Note added successfully'); 
+      alert('Note added successfully');
     } catch (error) {
       console.error(error);
-      alert('Failed to add note');
-    }
+      alert('Failed to add note: Your image size is too big, Please try again and wait patiently.');
+    } 
   }
 
-  
+
 
   const handleRemoveImage = (index) => {
     setImages(images.filter((img, i) => i !== index));
   }
 
-  return (
-    <div className={styles.addnoteContainer}>
-      <h2>Create a Note</h2>
-      <form onSubmit={handleAddNote}>
-        <input type="file" multiple onChange={handleImagesChange} />
-        {images.length > 0 && (
-          <Carousel indicators={false} controls={true} interval={null}>
-            {images.map((image, index) => (
-              <Carousel.Item key={image.url} className={styles.carouselItem}>
-                <div className={styles.carouselImageContainer}>
-                  <img
-                    className={styles.carouselImage}
-                    src={image.url}
-                    alt={`Slide ${index}`}
-                  />
-                  <button 
-                    className={styles.carouselRemoveButton} 
-                    type="button" 
-                    onClick={() => handleRemoveImage(index)}
-                  >
-                    Remove this picture
-                  </button>
-                </div>
-              </Carousel.Item>
-            ))}
-          </Carousel>        
-        )}
-        <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Add a title" />
-        <ReactQuill
-          className={styles.quillEditor}
-          theme='snow'
-          value={content}
-          onChange={setContent}
-        />
-        <button type="submit">Post</button>
-      </form>
-    </div>
-  );  
-};
+    return (
+      <div className={styles.addnoteContainer}>
+        <h2>Create a Note</h2>
+        <form onSubmit={handleAddNote}>
+          <input type="file" multiple onChange={handleImagesChange} />
+          {images.length > 0 && (
+            <Carousel indicators={false} controls={true} interval={null}>
+              {images.map((image, index) => (
+                <Carousel.Item key={image.url} className={styles.carouselItem}>
+                  <div className={styles.carouselImageContainer}>
+                    <img
+                      className={styles.carouselImage}
+                      src={image.url}
+                      alt={`Slide ${index}`}
+                    />
+                    <button 
+                      className={styles.carouselRemoveButton} 
+                      type="button" 
+                      onClick={() => handleRemoveImage(index)}
+                    >
+                      Remove this picture
+                    </button>
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>        
+          )}
+          <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Add a title" />
+          <ReactQuill
+            className={styles.quillEditor}
+            theme='snow'
+            value={content}
+            onChange={setContent}
+          />
+          <button type="submit">Post</button>
+        </form>
+      </div>
+    );  
+  };
+
 
 export default AddNote;
