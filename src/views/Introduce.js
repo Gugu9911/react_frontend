@@ -1,7 +1,7 @@
 import React from 'react';
-import cv from '../files/Janine.Guo_CV.pdf';
+import cv from '../files/Jingyi.Guo_CV.pdf';
 import styles from './Introduce.module.css';
-import Jingyi from '../files/Jingyi.jpeg';
+import Jingyi from '../files/Jingyi.jpg';
 
 const Introduce = () => {
   return (
@@ -9,20 +9,26 @@ const Introduce = () => {
       <div className={styles.columnright}>
         <h2 className={styles.title}>Jingyi's Little Website Overview</h2>
         <p className={styles.paragraph}>
-          Jingyi's Little Website is a Note Sharing Platform is a web application tailored for individuals to jot down, manage, and share their thoughts, ideas, and memories. The design is user-centric, providing users with the ability to personalize their notes with images, categorize them based on interests, and interact with the community through a liking system.
+          Jingyi's Little Website is a Note Sharing Platform is a web application tailored for individuals to jot down, 
+          manage, and share their thoughts, ideas, and memories. The design is user-centric, providing users with the ability 
+          to personalize their notes with images, categorize them based on interests, and interact with the community through a 
+          liking system.
           <p />
-          The Note Sharing Platform is more than just a space to write. It is a community platform, a space for expression, and a hub for inspiration. Whether you're penning down your daily experiences, sharing an exciting memory, or offering a piece of advice.
+          This website uses React for the front-end development of the web application, creating reusable and dynamic
+          components to build the UI. Also Implemented the back-end logic with Express, a Node.js web framework, to handle 
+          the routing and APIs for data interaction between the front-end and the database. MangoDB Cloud and Cloudnary are
+          the database management system to store and retrieve data.
           <p />
-          <a href="https://www.linkedin.com/in/jingyi-guo-7756a0254/" target="_blank" rel="noopener noreferrer" className={styles.link}>Website Source</a>
+          <a href="https://jingyi-littlenotewebsite.onrender.com/" target="_blank" rel="noopener noreferrer" className={styles.link}>Website Source</a>
         </p>
       </div>
 
       <div className={styles.columnleft}>
         <h2 className={styles.title}>About Me</h2>
         <p className={styles.paragraph}>
-          I'm Jingyi Guo, a master's degree candidate in Computer Science at the University of Helsinki. I'm passionate about web development and design.
+          I'm Jingyi Guo, a master's degree student in Computer Science at the University of Helsinki. I'm passionate about web development and design.
         </p>
-        I am currently on the lookout for opportunities where I can contribute my skills and further hone them. Whether it be a full-time role or an internship, I am eager to bring my enthusiasm, dedication, and expertise to a forward-thinking company based in Finland. 
+        I am currently on the lookout for opportunities where I can contribute my skills and further hone them. Whether it be a full-time role or an internship, I am eager to bring my enthusiasm and expertise to a forward-thinking company based in Finland. 
         <a href={cv} target="_blank" rel="noopener noreferrer">
           <button type="button" className={styles.button}>View My CV</button>
         </a>

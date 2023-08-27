@@ -10,7 +10,7 @@ import { useContext } from 'react';
 import { PopupContext } from '../context/GlobalContext';
 import { UserContext } from '../context/GlobalContext';
 
-const MAX_IMAGES = 5;
+const MAX_IMAGES = 8;
 
 const AddNote = () => {
   const [images, setImages] = useState([]);

@@ -138,7 +138,7 @@
 }
 
 .imageContainer img {
-  width: 80%;
+  width: 60%;
   height: auto;
   border-radius: 1rem;  /* Use rem for border-radius */
 }
